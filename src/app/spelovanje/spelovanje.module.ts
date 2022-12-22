@@ -1,13 +1,9 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { HomeSpelovanjeComponent } from './home-spelovanje/home-spelovanje.component';
+import { SlovaSpelovanjeComponent } from './slova-spelovanje/slova-spelovanje.component';
 
 
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-// speloavanje feature
-import { SpelovanjeModule } from './spelovanje/spelovanje.module';
 // Angular Material
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -22,15 +18,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 
 
+
 @NgModule({
   declarations: [
-    AppComponent,
+    HomeSpelovanjeComponent,
+    SlovaSpelovanjeComponent
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    SpelovanjeModule,
-    FormsModule,
+    CommonModule,
     MatSlideToggleModule,
     MatSidenavModule,
     MatToolbarModule,
@@ -43,7 +38,9 @@ import { MatTableModule } from '@angular/material/table';
     MatInputModule,
     MatTableModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  exports: [
+    HomeSpelovanjeComponent,
+    SlovaSpelovanjeComponent
+  ]
 })
-export class AppModule { }
+export class SpelovanjeModule { }

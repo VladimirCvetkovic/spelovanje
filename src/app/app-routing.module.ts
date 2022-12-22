@@ -4,11 +4,11 @@ import { HomeSpelovanjeComponent } from './spelovanje/home-spelovanje/home-spelo
 import { SlovaSpelovanjeComponent } from './spelovanje/slova-spelovanje/slova-spelovanje.component';
 
 const routes: Routes = [{
-  path:"/",
+  path:"",
   component: HomeSpelovanjeComponent
 },
 {
-  path:"/slova",
+  path:"slova",
   component: SlovaSpelovanjeComponent
 }
 ];

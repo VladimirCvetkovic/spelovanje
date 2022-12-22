@@ -11,14 +11,14 @@
 </mat-toolbar>
 
 <mat-sidenav-container>
-    <mat-sidenav #sidenav="matSidenav">
+    <mat-sidenav #sidenav>
         <h1>Spelovanje</h1>
         <p>Izgovor slova na Engleskom jeziku</p>
         <mat-divider></mat-divider>
         <div *ngFor="let items of menu;">
             <a [routerLink]="items.path" mat-button class="menu-button" color="primary">
-                <mat-icon>items.icon</mat-icon>
-                <span>items.text</span>
+                <mat-icon>{{items.icon}}</mat-icon>
+                <span>{{items.text}}</span>
             </a>
             <mat-divider></mat-divider>
         </div>

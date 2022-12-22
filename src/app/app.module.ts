@@ -6,21 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './shared/shared.module';
 
 // speloavanje feature
 import { SpelovanjeModule } from './spelovanje/spelovanje.module';
-// Angular Material
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { TextFieldModule } from '@angular/cdk/text-field';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
@@ -33,17 +22,7 @@ import { MatTableModule } from '@angular/material/table';
     BrowserAnimationsModule,
     SpelovanjeModule,
     FormsModule,
-    MatSlideToggleModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatDividerModule,
-    MatIconModule,
-    MatListModule,
-    TextFieldModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatTableModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -16,7 +16,7 @@
         <p>Izgovor slova na Engleskom jeziku</p>
         <mat-divider></mat-divider>
         <div *ngFor="let items of menu;">
-            <a [routerLink]="items.path" mat-button class="menu-button" color="primary">
+            <a [routerLink]="items.path" mat-button class="menu-button" color="primary" (click)="sidenav.mode === 'over' ? sidenav.toggle(): null">
                 <mat-icon>{{items.icon}}</mat-icon>
                 <span>{{items.text}}</span>
             </a>

@@ -1,26 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Slova } from '../models/slova';
+import { SLOVA } from '../shared/mock-slova';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SlovaService {
+  slova = SLOVA;
 
-  slova: Slova = [
-    {
-      column: 1,
-      text: "a",
-      pronunciation: "ej",
-      visible: true
-    },
-    {
-      column: 1,
-      text: "a",
-      pronunciation: "ej",
-      visible: true
-    }
-  ]
-
+  getSlova(){
+    return this.slova;
+  }
 
   speluj(word: string): Array<string>{
 

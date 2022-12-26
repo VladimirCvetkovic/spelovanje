@@ -20,7 +20,9 @@ export class SlovaService {
     return tableData;
   }
 
-  spell(word: string): Array<string>{
+  speluj(word: string): Array<string>{
+
+    
 
     //const returnText = `${text} = ${pronunciation}`
     return [];

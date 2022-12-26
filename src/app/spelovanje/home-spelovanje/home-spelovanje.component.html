@@ -1,11 +1,16 @@
-<h2>Unesite rec koju zelite da spelujete</h2>
-<form class="example-form">
-    <mat-form-field class="example-full-width">
-        <mat-label>Unesite ime</mat-label>
-        <input matInput placeholder="Name" value="Name">
+<form class="example-form" [formGroup]="form" (ngSubmit)="speluj()">
+    <mat-form-field appearance="outline">
+        <mat-label>Unesite rec koju zelite da spelujete</mat-label>
+        <input formControlName="rec" matInput>
+        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-hint>Hint</mat-hint> -->
     </mat-form-field>
 </form>
-<button mat-flat-button color="primary">
-    Submit
+<button mat-flat-button color="primary" [disabled]="form.invalid" >
+    Speluj
 </button>
 
+<br>
+<div *ngFor="let red of izgovorSlova">
+    {{red}}
+</div>

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { SLOVA } from 'src/app/shared/mock-slova';
+import { Component } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { SlovaService } from 'src/app/services/slova.service';
 
 @Component({
   selector: 'app-slova-spelovanje',
@@ -7,7 +8,13 @@ import { SLOVA } from 'src/app/shared/mock-slova';
   styleUrls: ['./slova-spelovanje.component.scss']
 })
 export class SlovaSpelovanjeComponent {
-  displayedColumns: string[] = ['positionColumn', 'text', 'pronunciation', 'visible'];
-  dataSource = SLOVA;
+  displayedColumns: string[] = ['column1', 'column2', 'column3', 'column4'];
+  dataSource = new MatTableDataSource([]);;
+
+  constructor(slovaService: SlovaService){
+
+    this.dataSource.data = slovaService.getSlovaForTable();
+    console.log("=====", this.dataSource);
+  }
 }
 

@@ -1,6 +1,7 @@
 export interface Slovo {
     text: string;
-    positionColumn: number;
+    column: number;
+    row: number;
     pronunciation: string;
     visible: boolean;
   }

@@ -12,9 +12,7 @@ export class SlovaSpelovanjeComponent {
   dataSource = new MatTableDataSource([]);;
 
   constructor(slovaService: SlovaService){
-
     this.dataSource.data = slovaService.getSlovaForTable();
-    console.log("=====", this.dataSource);
   }
 }
 

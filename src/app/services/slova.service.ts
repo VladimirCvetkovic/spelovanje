@@ -17,10 +17,20 @@ export class SlovaService {
       }
       tableData.push(rowObj);
     }
+    console.log(tableData);
     return tableData;
+    
   }
 
   speluj(word: string): Array<string>{
+    let Red = [];
+    const nizSlova = [...word] ;
+    console.log(nizSlova);
+    for (let index = 0; index < nizSlova.length; index++){
+        let obj = SLOVA.find(o => o.text == nizSlova[0]);  
+        console.log(obj);
+    }
+  
 
     
 

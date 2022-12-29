@@ -31,8 +31,19 @@ mat-sidenav-content {
     font-size: 2rem;
     .content {
         display: flex;
+        width: 800px;
         flex-direction: column;
         justify-content: start;
         text-align: center;
     }
 }
+
+@media (min-width: 480px) {
+    mat-form-field {
+        width: 30vw;
+    }
+    .mdc-button {
+        width: 30vw;
+      }
+  }
+

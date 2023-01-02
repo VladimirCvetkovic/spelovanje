@@ -23,16 +23,23 @@ export class SlovaService {
   }
 
   speluj(word: string): Array<string>{
-    let Red = [];
     const nizSlova = [...word] ;
     console.log(nizSlova);
-    for (let index = 0; index < nizSlova.length; index++){
-        let obj = SLOVA.find(o => o.text == nizSlova[0]);  
-        console.log(obj);
+    let reci: any = [];
+
+    for (let k = 0; k < nizSlova.length; k++){
+      var rec = SLOVA.find(function(slova, index) {
+        if(slova.text == nizSlova[k]){
+          var returnText = `${slova.text} = ${slova.pronunciation}`;
+          reci.push(returnText);
+          console.log(reci);
+        }
+      });
     }
-  
 
     
+      
+      
 
     //const returnText = `${text} = ${pronunciation}`
     return [];

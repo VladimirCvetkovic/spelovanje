@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Slovo } from '../models/slovo';
 import { SLOVA } from '../shared/mock-slova';
 
 @Injectable({
@@ -22,27 +23,21 @@ export class SlovaService {
     
   }
 
-  speluj(word: string): Array<string>{
-    const nizSlova = [...word] ;
-    console.log(nizSlova);
-    let reci: any = [];
+  speluj(rec: string): Array<Slovo> {
+    let slova: any = [];
+    for (const slovo of rec) {
+      const red = SLOVA.find(item => item.text === slovo.toLowerCase());
+      slova.push(red);
+    }
+    return slova;
+  }
 
-    for (let k = 0; k < nizSlova.length; k++){
-      var rec = SLOVA.find(function(slova, index) {
-        if(slova.text == nizSlova[k]){
-          var returnText = `${slova.text} = ${slova.pronunciation}`;
-          reci.push(returnText);
-          console.log(reci);
-        }
-      });
+
+  spelujAudio(rec: string): void {
+    for (const slovo of rec) {
+
     }
 
-    
-      
-      
-
-    //const returnText = `${text} = ${pronunciation}`
-    return [];
   }
 
 }

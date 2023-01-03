@@ -2,15 +2,15 @@
     <mat-form-field appearance="outline" class="vlicinaInput">
         <mat-label>Unesite rec koju zelite da spelujete</mat-label>
         <input formControlName="rec" matInput>
-        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        <mat-hint>Hint</mat-hint> -->
+        <mat-icon matSuffix (click)="spelujAudio()">sentiment_very_satisfied</mat-icon>
     </mat-form-field>
 </form>
-<button mat-flat-button color="primary" [disabled]="form.invalid">
+<button mat-flat-button color="primary" [disabled]="form.invalid" (click)="speluj()">
     Speluj
 </button>
 
 <br>
-<div *ngFor="let red of izgovorSlova">
-    {{red}}
+<br>
+<div *ngFor="let slovo of izgovorSlova">
+    {{slovo.text}} = {{slovo.pronunciation}}
 </div>

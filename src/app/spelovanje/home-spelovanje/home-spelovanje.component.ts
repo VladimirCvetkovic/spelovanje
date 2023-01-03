@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SlovaService } from 'src/app/services/slova.service';
+import {Slovo}from 'src/app/models/slovo'
 
 @Component({
   selector: 'app-home-spelovanje',
@@ -9,11 +10,15 @@ import { SlovaService } from 'src/app/services/slova.service';
 })
 export class HomeSpelovanjeComponent {
   form: FormGroup = new FormGroup({ rec: new FormControl('', [Validators.required]) })
-  izgovorSlova: string[] = [];
+  izgovorSlova: Slovo[] = [];
   constructor(private slovaService: SlovaService) { }
 
   speluj(): void{
     this.izgovorSlova = this.slovaService.speluj(this.form.value?.rec);
+  }
+
+  spelujAudio(): void{
+    this.slovaService.spelujAudio(this.form.value?.rec);
   }
 
 }

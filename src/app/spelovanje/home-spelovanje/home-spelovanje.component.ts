@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SlovaService } from 'src/app/services/slova.service';
-import {Slovo}from 'src/app/models/slovo';
-import Speech from "speak-tts";
+import { Slovo }from 'src/app/models/slovo';
+
 
 
 

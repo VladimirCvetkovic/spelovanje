@@ -2,7 +2,9 @@
     <mat-form-field appearance="outline" class="vlicinaInput">
         <mat-label>Unesite rec koju zelite da spelujete</mat-label>
         <input formControlName="rec" matInput>
-        <mat-icon matSuffix (click)="spelujAudio()">sentiment_very_satisfied</mat-icon>
+        <mat-icon matSuffix (click)="spelujAudio()"><span class="material-icons-outlined">
+            volume_up
+            </span></mat-icon>
     </mat-form-field>
 </form>
 <button mat-flat-button color="primary" [disabled]="form.invalid" (click)="speluj()">

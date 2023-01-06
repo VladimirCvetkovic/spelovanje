@@ -47,3 +47,14 @@ mat-sidenav-content {
       }
   }
 
+  @media (max-width: 480px) {
+    mat-form-field {
+        width: 50vw;
+    }
+    .mdc-button {
+        width: 50vw;
+      }
+  }
+
+
+

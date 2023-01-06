@@ -19,6 +19,11 @@ mat-sidenav {
     h2 {
         margin-top: 16px;
     }
+    a {
+        width: 100%;
+        display: flex;
+        justify-content: start;
+    }
 }
 
 mat-sidenav-content {

@@ -34,10 +34,9 @@ export class SlovaService {
 
 
   spelujAudio(rec: string): void {
-    for (const slovo of rec) {
-
-    }
-
+    const synth = window.speechSynthesis;
+    const utterance = new SpeechSynthesisUtterance(rec);
+    synth.speak(utterance);
   }
 
 }

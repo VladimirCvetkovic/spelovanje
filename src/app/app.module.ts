@@ -22,7 +22,7 @@ import { SpelovanjeModule } from './spelovanje/spelovanje.module';
     BrowserAnimationsModule,
     SpelovanjeModule,
     FormsModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

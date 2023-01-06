@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { SlovaService } from 'src/app/services/slova.service';
 
+
 @Component({
   selector: 'app-slova-spelovanje',
   templateUrl: './slova-spelovanje.component.html',

@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SlovaService } from 'src/app/services/slova.service';
-import {Slovo}from 'src/app/models/slovo'
+import {Slovo}from 'src/app/models/slovo';
+import Speech from "speak-tts";
+
+
 
 @Component({
   selector: 'app-home-spelovanje',
@@ -20,5 +23,7 @@ export class HomeSpelovanjeComponent {
   spelujAudio(): void{
     this.slovaService.spelujAudio(this.form.value?.rec);
   }
+
+ 
 
 }

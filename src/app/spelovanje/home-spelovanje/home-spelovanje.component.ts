@@ -24,6 +24,4 @@ export class HomeSpelovanjeComponent {
     this.slovaService.spelujAudio(this.form.value?.rec);
   }
 
- 
-
 }

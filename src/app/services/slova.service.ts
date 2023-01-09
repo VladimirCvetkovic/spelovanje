@@ -34,10 +34,24 @@ export class SlovaService {
 
 
   spelujAudio(rec: string): void {
+    let slova: any = [];
     for (const slovo of rec) {
+      // Get the speech synthesis interface
+const synth = window.speechSynthesis;
 
+// Create a new utterance
+const utterance = new SpeechSynthesisUtterance(slovo);
+
+// Set the voice and language
+utterance.voice = synth.getVoices()[0];
+utterance.lang = "en-US";
+
+// Speak the utterance
+synth.speak(utterance);
+      }
     }
-
   }
 
-}
+  
+
+

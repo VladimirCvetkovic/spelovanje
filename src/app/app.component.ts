@@ -44,6 +44,8 @@ export class AppComponent implements AfterViewInit, AfterContentChecked{
     });
   }
 
+  // toggle button
+  isDarkTheme: boolean = true;
 
 
 }

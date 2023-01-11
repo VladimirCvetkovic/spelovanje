@@ -1,14 +1,20 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { AfterContentChecked, AfterViewInit, ChangeDetectorRef, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, HostBinding, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Menu } from './models/menu';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements AfterViewInit, AfterContentChecked{
+export class AppComponent implements AfterViewInit {
+  darkMode: boolean = false;
+
+  @HostBinding('class')
+  get themeMode(){
+    return this.darkMode ? 'darkMode' : '';
+  }
 
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
@@ -26,11 +32,10 @@ export class AppComponent implements AfterViewInit, AfterContentChecked{
 
   title = 'Spelovanje';
 
-  constructor (private observer: BreakpointObserver, private changeDetectorRef: ChangeDetectorRef) { }
-  
-  ngAfterContentChecked(): void {
-    this.changeDetectorRef.detectChanges();
-  }
+  constructor(
+    private observer: BreakpointObserver,
+    private changeDetectorRef: ChangeDetectorRef
+  ) { }
 
   ngAfterViewInit(): void {
     this.observer.observe(['(max-width: 800px)']).subscribe((res) => {
@@ -42,10 +47,7 @@ export class AppComponent implements AfterViewInit, AfterContentChecked{
         this.sidenav.open();
       }
     });
+    this.changeDetectorRef.detectChanges();
   }
-
-  // toggle button
-  isDarkTheme: boolean = true;
-
 
 }

@@ -7,9 +7,9 @@ import { SLOVA } from '../shared/mock-slova';
 })
 export class SlovaService {
 
-  getSlovaForTable():any{   
+  getSlovaForTable(): any {
     let tableData = [];
-    var maxRow = Math.max(...SLOVA.map(o=>o.row)); 
+    var maxRow = Math.max(...SLOVA.map(o => o.row));
     for (let index = 0; index < maxRow; index++) {
       const filterRow = SLOVA.filter(item => item.row == index + 1);
       let rowObj = {};
@@ -20,7 +20,6 @@ export class SlovaService {
     }
     console.log(tableData);
     return tableData;
-    
   }
 
   speluj(rec: string): Array<Slovo> {
@@ -34,24 +33,19 @@ export class SlovaService {
 
 
   spelujAudio(rec: string): void {
-    let slova: any = [];
     for (const slovo of rec) {
       // Get the speech synthesis interface
-const synth = window.speechSynthesis;
+      const synth = window.speechSynthesis;
 
-// Create a new utterance
-const utterance = new SpeechSynthesisUtterance(slovo);
+      // Create a new utterance
+      const utterance = new SpeechSynthesisUtterance(slovo);
 
-// Set the voice and language
-utterance.voice = synth.getVoices()[0];
-utterance.lang = "en-US";
+      // Set the voice and language
+      utterance.voice = synth.getVoices()[0];
+      utterance.lang = "en-US";
 
-// Speak the utterance
-synth.speak(utterance);
-      }
+      // Speak the utterance
+      synth.speak(utterance);
     }
   }
-
-  
-
-
+}

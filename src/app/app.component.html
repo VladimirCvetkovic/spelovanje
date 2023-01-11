@@ -1,7 +1,14 @@
-<div>
-    <mat-toolbar>
-        <h1>Spelovanje</h1>
-        <mat-slide-toggle>dark mode</mat-slide-toggle>
+<mat-toolbar>
+    <h1>Spelovanje</h1>
+    <div>
+        <button mat-icon-button (click)="darkMode = !darkMode">
+            <mat-icon *ngIf="darkMode">
+                brightness_5
+            </mat-icon>
+            <mat-icon *ngIf="!darkMode">
+                bedtime
+            </mat-icon>
+        </button>
         <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
             <mat-icon *ngIf="!sidenav.opened">
                 menu
@@ -10,32 +17,32 @@
                 close
             </mat-icon>
         </button>
-    </mat-toolbar>
-    
-    <mat-sidenav-container>
-        <mat-sidenav #sidenav>
-            <h1>Spelovanje</h1>
-            <p>Izgovor slova na Engleskom jeziku</p>
+    </div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav>
+        <p>Izgovor slova na Engleskom jeziku</p>
+        <mat-divider></mat-divider>
+        <div *ngFor="let items of menu;">
+            <a [routerLink]="items.path" mat-button class="menu-button"
+                (click)="sidenav.mode === 'over' ? sidenav.toggle(): null">
+                <mat-icon>{{items.icon}}</mat-icon>
+                <span>{{items.text}}</span>
+            </a>
             <mat-divider></mat-divider>
-            <div *ngFor="let items of menu;">
-                <a [routerLink]="items.path" mat-button class="menu-button" (click)="sidenav.mode === 'over' ? sidenav.toggle(): null">
-                    <mat-icon>{{items.icon}}</mat-icon>
-                    <span>{{items.text}}</span>
-                </a>
-                <mat-divider></mat-divider>
-            </div>
-            <h2>O Nama</h2>
-            <p>
-                Na ovom sajtu možete da naučite kako se izgovara engleska abeceda. 
-                Ukoliko želite nekome da spelujete neku reč ovo je pravi sajt za Vas. 
-                Ovaj sajt Vam omogućava jednostavnim unosom reči u polje i klikom na dugme SPELUJ
-                 da saznate kako se koje slovo izgovara. : )
-            </p>
-        </mat-sidenav>
-        <mat-sidenav-content>
-            <div class="content">
-                <router-outlet></router-outlet>
-            </div>
-        </mat-sidenav-content>
-    </mat-sidenav-container>
-</div>
+        </div>
+        <h2>O Nama</h2>
+        <p>
+            Na ovom sajtu možete da naučite kako se izgovara engleska abeceda.
+            Ukoliko želite nekome da spelujete neku reč ovo je pravi sajt za Vas.
+            Ovaj sajt Vam omogućava jednostavnim unosom reči u polje i klikom na dugme SPELUJ
+            da saznate kako se koje slovo izgovara. : )
+        </p>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,7 +1,7 @@
 <form class="example-form" [formGroup]="form" (ngSubmit)="speluj()">
     <mat-form-field appearance="outline" class="vlicinaInput">
         <mat-label>Unesite rec koju zelite da spelujete</mat-label>
-        <input formControlName="rec" matInput>
+        <input formControlName="rec" matInput autocomplete="off">
         <mat-icon matSuffix (click)="spelujAudio()"><span class="material-icons-outlined">
             volume_up
             </span></mat-icon>

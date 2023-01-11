@@ -1,4 +1,4 @@
-<mat-toolbar>
+<mat-toolbar color="primary">
     <h1>Spelovanje</h1>
     <div>
         <button mat-icon-button (click)="darkMode = !darkMode">
@@ -24,14 +24,13 @@
     <mat-sidenav #sidenav>
         <p>Izgovor slova na Engleskom jeziku</p>
         <mat-divider></mat-divider>
-        <div *ngFor="let items of menu;">
-            <a [routerLink]="items.path" mat-button class="menu-button"
-                (click)="sidenav.mode === 'over' ? sidenav.toggle(): null">
-                <mat-icon>{{items.icon}}</mat-icon>
-                <span>{{items.text}}</span>
-            </a>
+        <mat-selection-list #shoes [multiple]="false">
+            <mat-list-option [routerLink]="items.path" *ngFor="let items of menu" [value]="items.text">
+                <mat-icon matListItemIcon>{{items.icon}}</mat-icon>
+                <div matListItemTitle>{{items.text}}</div>
+            </mat-list-option>
             <mat-divider></mat-divider>
-        </div>
+        </mat-selection-list>
         <h2>O Nama</h2>
         <p>
             Na ovom sajtu možete da naučite kako se izgovara engleska abeceda.

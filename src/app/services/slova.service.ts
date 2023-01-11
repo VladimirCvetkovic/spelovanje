@@ -18,7 +18,6 @@ export class SlovaService {
       }
       tableData.push(rowObj);
     }
-    console.log(tableData);
     return tableData;
   }
 

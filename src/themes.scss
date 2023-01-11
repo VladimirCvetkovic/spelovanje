@@ -32,6 +32,20 @@ $angular-dark-theme: mat.define-dark-theme(
   )
 );
 
+$angular-purple-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: mat.define-palette(mat.$purple-palette, 500, 100, 900),
+      accent: mat.define-palette(mat.$purple-palette, A200, A100, A400),
+      warn: $angular-warn,
+    ),
+  )
+);
+
 .darkMode {
   @include mat.all-component-colors($angular-dark-theme);
+}
+
+.purpleDarkMode {
+  @include mat.all-component-colors($angular-purple-theme);
 }

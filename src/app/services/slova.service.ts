@@ -41,7 +41,7 @@ export class SlovaService {
 
       // Set the voice and language
       utterance.voice = synth.getVoices()[0];
-      utterance.lang = "en-US";
+      utterance.lang = "en-GB";
 
       // Speak the utterance
       synth.speak(utterance);
